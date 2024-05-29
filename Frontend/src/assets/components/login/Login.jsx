@@ -13,7 +13,7 @@ const Logueo = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch('http://localhost:4000/restaurante/login', {
+      const response = await fetch('https://despliegue-iota.vercel.app/restaurante/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

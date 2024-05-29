@@ -10,7 +10,7 @@ const Cocina = () => {
   useEffect(() => {
     const fetchPedidos = async () => {
       try {
-        const response = await fetch('http://localhost:4000/restaurante/pedidos');
+        const response = await fetch('https://despliegue-iota.vercel.app/restaurante/pedidos');
         if (!response.ok) {
           throw new Error('Error al cargar los pedidos: ' + response.statusText);
         }
@@ -26,7 +26,7 @@ const Cocina = () => {
 
   const handleMarcarComoListo = async (id) => {
     try {
-        const response = await fetch(`http://localhost:4000/restaurante/pedidos/${id}`, {
+        const response = await fetch(`https://despliegue-iota.vercel.app/restaurante/pedidos/${id}`, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json',
@@ -40,7 +40,7 @@ const Cocina = () => {
 
         const pedidoListo = pedidos.find(pedido => pedido.id === id);
 
-        const ventaResponse = await fetch('http://localhost:4000/restaurante/ventas', {
+        const ventaResponse = await fetch('https://despliegue-iota.vercel.app/restaurante/ventas', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

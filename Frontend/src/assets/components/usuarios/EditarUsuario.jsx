@@ -13,7 +13,7 @@ const EditarUsuario = () => {
   useEffect(() => {
     const fetchUsuarios = async () => {
       try {
-        const response = await fetch('http://localhost:4000/restaurante/usuarios');
+        const response = await fetch('https://despliegue-iota.vercel.app/restaurante/usuarios');
         const data = await response.json();
         setUsuarios(data);
       } catch (error) {
@@ -31,7 +31,7 @@ const EditarUsuario = () => {
     }
   
     try {
-      const response = await fetch(`http://localhost:4000/restaurante/usuarios/${selectedUser}`, {
+      const response = await fetch(`https://despliegue-iota.vercel.app/restaurante/usuarios/${selectedUser}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

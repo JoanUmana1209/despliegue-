@@ -18,7 +18,7 @@ const CrearProducto = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:4000/restaurante/productos/crear', {
+      const response = await fetch('https://despliegue-iota.vercel.app/restaurante/productos/crear', {
 
         method: 'POST',
         headers: {
